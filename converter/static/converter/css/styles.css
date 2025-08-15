@@ -1,0 +1,73 @@
+:root {
+    --bs-font-sans-serif: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html{
+    background: linear-gradient(135deg, #00cec099, #892fff99);
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    height: 100%;
+    width: 100%;
+    background: transparent;
+}
+
+.vibe-title {
+    font-weight: 700;
+    font-size: 3rem;
+    background: linear-gradient(to right, #00cec0, #892fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+
+.custom-input {
+    border-radius: 50px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+}
+
+.submit-button {
+    background: linear-gradient(to right, #00cec0, #892fff);
+    color:white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 22px;
+    box-shadow: 0 4px 15px rgba(137, 47, 255, 0.2);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    display: block; 
+    margin: 0 auto;
+}
+
+.submit-button:hover {
+    box-shadow: 0 6px 20px rgba(137, 47, 255, 0.9);
+    transform: scale(1.05);
+}
+
+
+/* Modales */
+.swal2-container {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(6px);
+}
+
+
+.swal2-popup {
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón de confirmación */
+.swal2-confirm {
+    background: linear-gradient(90deg, #7b5cff, #5cafff) !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+    padding: 0.6rem 1.2rem;
+}
