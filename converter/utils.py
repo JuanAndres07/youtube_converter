@@ -23,7 +23,7 @@ def get_video_info(url: str) -> dict:
         for f in formats:
             """  and f.get('acodec') != 'none' """
 
-            if f.get('url') and f.get('vcodec') != 'none' and f.get('ext') == 'mp4':
+            if f.get('url') and f.get('vcodec') != 'none' and f.get('ext') == 'mp4' and f.get('acodec') != 'none':
                 resolution = f"{f.get('height', '?')}p"
                 video_formats.append({
                     'format_id': f.get('format_id'),
