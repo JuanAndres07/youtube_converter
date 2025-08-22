@@ -21,10 +21,9 @@ def get_video_info(url: str) -> dict:
         video_formats = []
 
         for f in formats:
-            """ if f.get('url') and f.get('vcodec') != 'none' and f.get('height'): """
             """  and f.get('acodec') != 'none' """
 
-            if f.get('url') and f.get('vcodec') != 'none' and f.get('ext') == 'mp4' and f.get('acodec') != 'none' :
+            if f.get('url') and f.get('vcodec') != 'none' and f.get('ext') == 'mp4':
                 resolution = f"{f.get('height', '?')}p"
                 video_formats.append({
                     'format_id': f.get('format_id'),
@@ -129,18 +128,20 @@ def convert_audio_to_aac(filepath: str, ffmpeg_path: str = r'C:\ffmpeg\bin\ffmpe
     Convierte el audio de un archivo de video a AAC usando ffmpeg.
     """
     base_name, ext = os.path.splitext(filepath)
-    output_path = base_name + '_aac' + ext
+    temp_output = base_name + '_temp' + ext
 
     subprocess.run([
         ffmpeg_path, '-i', filepath,
         '-c:v', 'copy',
         '-c:a', 'aac',
         '-strict', 'experimental',
-        output_path
+        temp_output
     ], check=True)
 
     os.remove(filepath)
-    return output_path
+    os.rename(temp_output, filepath)
+
+    return filepath
 
 
 def clean_url(url: str) -> str:
