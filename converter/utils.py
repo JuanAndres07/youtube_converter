@@ -122,8 +122,8 @@ def download_custom_video(url: str, video_format_id: str) -> str:
     except Exception as e:
         raise ValueError(f"Error al descargar el video: {e}")
     
-
-def convert_audio_to_aac(filepath: str, ffmpeg_path: str = r'C:\ffmpeg\bin\ffmpeg.exe') -> str:
+    
+def convert_audio_to_aac(filepath: str, ffmpeg_path: str = "ffmpeg") -> str:
     """ 
     Convierte el audio de un archivo de video a AAC usando ffmpeg.
     """
