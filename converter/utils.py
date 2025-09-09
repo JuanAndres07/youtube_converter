@@ -11,6 +11,11 @@ def get_video_info(url: str) -> dict:
     ydl_opts = {
         'quiet': True,
         'skip_download': True,
+        "extractor_args": {
+            "youtube": {
+                "player_client": ["android", "ios"]
+            }
+        }
     }
 
     try:
@@ -57,6 +62,11 @@ def download_mp3(url: str) -> str:
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': 'media/%(title)s.%(ext)s',
+        "extractor_args": {
+            "youtube": {
+                "player_client": ["android", "ios"]
+            }
+        },
         'postprocessors': [{
             'key': 'FFmpegExtractAudio',
             'preferredcodec': 'mp3',
@@ -104,7 +114,11 @@ def download_custom_video(url: str, video_format_id: str) -> str:
             'merge_output_format': 'mp4',
             'outtmpl': output_template,
             'quiet': True,
-            'yt_client': 'android',
+            "extractor_args": {
+                "youtube": {
+                    "player_client": ["android", "ios"]
+                }
+            },
         }
 
         with YoutubeDL(ydl_opts) as ydl:

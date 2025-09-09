@@ -21,7 +21,7 @@ RUN useradd -ms /bin/bash appuser
 
 # Instalar deps de Python primero para aprovechar cache de Docker
 COPY requirements.txt ./
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -U yt-dlp -r requirements.txt
 
 # Copiar el resto del código
 COPY . .
