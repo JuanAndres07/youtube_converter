@@ -13,7 +13,7 @@ def get_video_info(url: str) -> dict:
         'skip_download': True,
         "extractor_args": {
             "youtube": {
-                "player_client": ["android", "ios"]
+                "player_client": ["android", "ios", "web", "tv", "web_embedded", "android_embedded"]
             }
         }
     }
@@ -64,7 +64,7 @@ def download_mp3(url: str) -> str:
         'outtmpl': 'media/%(title)s.%(ext)s',
         "extractor_args": {
             "youtube": {
-                "player_client": ["android", "ios"]
+                "player_client": ["android", "ios", "web", "tv", "web_embedded", "android_embedded"]
             }
         },
         'postprocessors': [{
@@ -116,7 +116,7 @@ def download_custom_video(url: str, video_format_id: str) -> str:
             'quiet': True,
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android", "ios"]
+                    "player_client": ["android", "ios", "web", "tv", "web_embedded", "android_embedded"]
                 }
             },
         }
