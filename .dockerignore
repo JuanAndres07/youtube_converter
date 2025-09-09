@@ -1,0 +1,14 @@
+.git
+__pycache__/
+*.py[cod]
+*.sqlite3
+env/
+venv/
+.idea/
+.vscode/
+node_modules/
+staticfiles/
+media/
+Dockerfile
+.dockerignore
+render.yaml
