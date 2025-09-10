@@ -16,7 +16,7 @@ def get_video_info(url: str) -> dict:
         'cookiefile': COCKIE_FILE,
         "extractor_args": {
             "youtube": {
-                "player_client": ["android", "ios", "web", "tv", "web_embedded"]
+                "player_client": ["web"]
             }
         }
     }
@@ -68,7 +68,7 @@ def download_mp3(url: str) -> str:
         'cookiefile': COCKIE_FILE,
         "extractor_args": {
             "youtube": {
-                "player_client": ["android", "ios", "web", "tv", "web_embedded", "android_embedded"]
+                "player_client": ["web"]
             }
         },
         'postprocessors': [{
@@ -97,7 +97,7 @@ def download_custom_video(url: str, video_format_id: str) -> str:
             'cookiefile': COCKIE_FILE,
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android", "ios", "web", "tv", "web_embedded", "android_embedded"]
+                    "player_client": ["web"]
                 }
             }
         }
@@ -131,7 +131,7 @@ def download_custom_video(url: str, video_format_id: str) -> str:
             'cookiefile': COCKIE_FILE,
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["android", "ios", "web", "tv", "web_embedded", "android_embedded"]
+                    "player_client": ["web"]
                 }
             },
         }
