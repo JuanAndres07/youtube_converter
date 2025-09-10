@@ -4,8 +4,6 @@ from urllib.parse import urlparse, parse_qs
 import subprocess
 import os
 
-COCKIE_FILE = "/etc/secrets/www.youtube.com_cookies.txt" 
-
 def get_video_info(url: str) -> dict:
     """ 
     Obtiene informacion del video sin descargarlo
@@ -13,10 +11,9 @@ def get_video_info(url: str) -> dict:
     ydl_opts = {
         'quiet': True,
         'skip_download': True,
-        'cookiefile': COCKIE_FILE,
         "extractor_args": {
             "youtube": {
-                "player_client": ["web"]
+                "player_client": ["android", "ios", "tv", "android_embedded"]
             }
         }
     }
@@ -65,10 +62,9 @@ def download_mp3(url: str) -> str:
     ydl_opts = {
         'format': 'bestaudio/best',
         'outtmpl': 'media/%(title)s.%(ext)s',
-        'cookiefile': COCKIE_FILE,
         "extractor_args": {
             "youtube": {
-                "player_client": ["web"]
+                "player_client": ["android", "ios", "tv", "android_embedded"]
             }
         },
         'postprocessors': [{
@@ -94,10 +90,9 @@ def download_custom_video(url: str, video_format_id: str) -> str:
     try:
         probe_opts = {
             'quiet': True,
-            'cookiefile': COCKIE_FILE,
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["web"]
+                    "player_client": ["android", "ios", "tv", "android_embedded"]
                 }
             }
         }
@@ -128,10 +123,9 @@ def download_custom_video(url: str, video_format_id: str) -> str:
             'merge_output_format': 'mp4',
             'outtmpl': output_template,
             'quiet': True,
-            'cookiefile': COCKIE_FILE,
             "extractor_args": {
                 "youtube": {
-                    "player_client": ["web"]
+                    "player_client": ["android", "ios", "tv", "android_embedded"]
                 }
             },
         }
