@@ -4,7 +4,7 @@ from urllib.parse import urlparse, parse_qs
 import subprocess
 import os
 
-COCKIE_FILE = "/etc/secrets/cookies.txt" 
+COCKIE_FILE = "/etc/secrets/www.youtube.com_cookies.txt" 
 
 def get_video_info(url: str) -> dict:
     """ 
